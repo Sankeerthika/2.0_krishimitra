@@ -4,3 +4,4 @@ openai
 google-generativeai
 aiohttp
 requests
+pillow
