@@ -7,6 +7,7 @@ import tempfile
 
 # from app.services.openai_service import generate_response_with_image
 from app.services.gemini_service import generate_response, generate_response_with_image
+from app.services.speech_service import transcribe_audio
 import re
 
 
@@ -78,7 +79,7 @@ def process_text_for_whatsapp(text):
     return whatsapp_style_text
 
 
-def download_whatsapp_media(media_id):
+def download_whatsapp_media(media_id, media_type="image"):
     """Download media file from WhatsApp and return the local file path"""
     try:
         # Get media URL from WhatsApp API
@@ -102,14 +103,21 @@ def download_whatsapp_media(media_id):
         media_response = requests.get(media_url, headers=headers)
         media_response.raise_for_status()
         
-        # Create temporary file to store the image
+        # Create temporary file to store the media
         temp_dir = tempfile.gettempdir()
-        temp_file_path = os.path.join(temp_dir, f"whatsapp_media_{media_id}.jpg")
+        
+        # Set appropriate file extension based on media type
+        if media_type == "audio":
+            file_extension = ".ogg"  # WhatsApp audio is typically OGG
+        else:
+            file_extension = ".jpg"  # Default to image
+            
+        temp_file_path = os.path.join(temp_dir, f"whatsapp_media_{media_id}{file_extension}")
         
         with open(temp_file_path, 'wb') as f:
             f.write(media_response.content)
         
-        logging.info(f"Downloaded media file to: {temp_file_path}")
+        logging.info(f"Downloaded {media_type} file to: {temp_file_path}")
         return temp_file_path
         
     except Exception as e:
@@ -130,13 +138,15 @@ def process_whatsapp_message(body):
     # Handle different message types
     if message_type == "text":
         message_body = message["text"]["body"]
+        logging.info(f"Processing text message from {name}: {message_body}")
+        
     elif message_type == "image":
         # Get image media ID and caption
         media_id = message["image"]["id"]
         message_body = message["image"].get("caption", "What do you see in this image?")
         
         # Download the image
-        image_path = download_whatsapp_media(media_id)
+        image_path = download_whatsapp_media(media_id, "image")
         
         if not image_path:
             response = "Sorry, I couldn't download the image. Please try sending it again."
@@ -145,9 +155,52 @@ def process_whatsapp_message(body):
             return
             
         logging.info(f"Processing image message from {name}: {message_body}")
+        
+    elif message_type == "audio":
+        # Get audio media ID
+        media_id = message["audio"]["id"]
+        
+        # Download the audio file
+        audio_path = download_whatsapp_media(media_id, "audio")
+        
+        if not audio_path:
+            response = "Sorry, I couldn't download the audio file. Please try sending it again."
+            data = get_text_message_input(wa_id, response)
+            send_message(data)
+            return
+            
+        logging.info(f"Processing audio message from {name}")
+        
+        # Transcribe audio to text
+        try:
+            transcribed_text = transcribe_audio(audio_path)
+            if transcribed_text:
+                message_body = transcribed_text
+                logging.info(f"Transcribed audio from {name}: {message_body}")
+            else:
+                response = "Sorry, I couldn't understand the audio. Please try speaking more clearly or send a text message."
+                data = get_text_message_input(wa_id, response)
+                send_message(data)
+                return
+                
+        except Exception as e:
+            logging.error(f"Error transcribing audio: {str(e)}")
+            response = "Sorry, I'm having trouble processing your voice message. Please try again or send a text message."
+            data = get_text_message_input(wa_id, response)
+            send_message(data)
+            return
+        finally:
+            # Clean up temporary audio file
+            if audio_path and os.path.exists(audio_path):
+                try:
+                    os.remove(audio_path)
+                    logging.info(f"Cleaned up temporary audio file: {audio_path}")
+                except Exception as e:
+                    logging.warning(f"Could not remove temporary audio file {audio_path}: {str(e)}")
+                    
     else:
         # Handle unsupported message types
-        response = "Sorry, I can only process text and image messages right now. 📝📸"
+        response = "Sorry, I can only process text, image, and voice messages right now. 📝📸🎤"
         data = get_text_message_input(wa_id, response)
         send_message(data)
         return
@@ -170,6 +223,9 @@ def process_whatsapp_message(body):
     
     # Process text for WhatsApp formatting
     response = process_text_for_whatsapp(response)
+    
+    # Log that we're sending a text-only response
+    logging.info(f"Sending text response to {name}: {response[:50]}...")
 
     data = get_text_message_input(wa_id, response)
     send_message(data)
@@ -189,5 +245,6 @@ def is_valid_whatsapp_message(body):
         and (
             body["entry"][0]["changes"][0]["value"]["messages"][0].get("text")
             or body["entry"][0]["changes"][0]["value"]["messages"][0].get("image")
+            or body["entry"][0]["changes"][0]["value"]["messages"][0].get("audio")
         )
     )

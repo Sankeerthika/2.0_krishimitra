@@ -1,7 +1,9 @@
 flask
 python-dotenv
-openai
 google-generativeai
+google-cloud-speech
+SpeechRecognition
 aiohttp
 requests
 pillow
+pydub
