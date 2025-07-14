@@ -65,8 +65,8 @@ KisanAI/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/mandarwagh9/whatsapp-ai.git
-   cd whatsapp-ai/AI
+   git clone https://github.com/mandarwagh9/KisanAI.git
+   cd KisanAI/AI
    ```
 
 2. **Install dependencies**
