@@ -1,0 +1,50 @@
+{
+  "PM_KISAN": {
+    "description": "₹6000 annual income support for small farmers",
+    "eligibility": "All landholding farmers with valid documents",
+    "documents": "Aadhaar card, bank account, land records, mobile number",
+    "how_to_apply": "Online at pmkisan.gov.in or through CSC centers",
+    "installments": "₹2000 every 4 months (3 installments per year)",
+    "contact": "Call 155261 or visit nearest agriculture office"
+  },
+  "CROP_INSURANCE": {
+    "description": "Insurance against crop loss due to natural calamities",
+    "eligibility": "All farmers with valid land documents",
+    "premium": "2% for Kharif crops, 1.5% for Rabi crops",
+    "coverage": "Up to sum insured based on scale of finance",
+    "how_to_apply": "Through banks, CSCs, or insurance companies before sowing",
+    "claim_process": "Report loss within 72 hours to insurance company"
+  },
+  "SOIL_HEALTH_CARD": {
+    "description": "Free soil testing and nutrient recommendations",
+    "eligibility": "All farmers can get soil tested",
+    "cost": "Completely free of cost",
+    "benefits": "Know exact fertilizer requirement, save money",
+    "how_to_apply": "Contact agriculture extension officer or Krishi Vigyan Kendra",
+    "frequency": "Get soil tested every 2-3 years"
+  },
+  "KISAN_CREDIT_CARD": {
+    "description": "Credit facility for agriculture and allied activities",
+    "eligibility": "Farmers with valid land documents",
+    "interest_rate": "7% per annum (4% after government subsidy)",
+    "limit": "Based on cropping pattern and scale of finance",
+    "how_to_apply": "Visit nearest bank branch with documents",
+    "documents": "Land papers, Aadhaar, PAN, bank statement"
+  },
+  "FASAL_BIMA_YOJANA": {
+    "description": "Comprehensive crop insurance scheme",
+    "eligibility": "All farmers - landowner and tenant farmers",
+    "premium": "Very low premium rates with high government subsidy",
+    "coverage": "Pre-sowing to post-harvest losses covered",
+    "technology": "Use of drones and satellite data for quick settlement",
+    "notification": "Get SMS alerts on enrollment and claims"
+  },
+  "ORGANIC_FARMING_SCHEME": {
+    "description": "Support for organic farming practices",
+    "eligibility": "Individual farmers and farmer groups",
+    "subsidy": "Up to ₹50,000 per hectare for 3 years",
+    "benefits": "Certification support, market linkage, premium prices",
+    "how_to_apply": "Through state agriculture department",
+    "training": "Free training on organic farming practices"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "leaf_spot": {
+    "symptoms": "Brown or black spots on leaves, yellowing around spots",
+    "treatment": "Spray copper sulfate solution 2g per liter water every 7 days",
+    "prevention": "Ensure good air circulation, avoid overhead watering",
+    "organic_treatment": "Neem oil 5ml + liquid soap 2ml per liter water",
+    "cost": "₹50-100 per acre treatment"
+  },
+  "powdery_mildew": {
+    "symptoms": "White powdery coating on leaves and stems",
+    "treatment": "Mix 5ml neem oil + 2ml liquid soap in 1 liter water, spray weekly",
+    "prevention": "Plant in sunny locations, avoid overcrowding",
+    "organic_treatment": "Baking soda 5g + liquid soap 2ml per liter water",
+    "cost": "₹30-80 per acre treatment"
+  },
+  "root_rot": {
+    "symptoms": "Yellowing leaves, wilting despite moist soil, dark roots",
+    "treatment": "Reduce watering, apply trichoderma 5g per plant",
+    "prevention": "Improve drainage, don't overwater, use raised beds",
+    "organic_treatment": "Cinnamon powder around roots, reduce irrigation",
+    "cost": "₹200-400 per acre for bio-fungicide"
+  },
+  "aphid_infestation": {
+    "symptoms": "Small green/black insects on leaves, sticky honeydew",
+    "treatment": "Spray soap solution: 10ml liquid soap per liter water",
+    "prevention": "Plant marigold nearby, encourage beneficial insects",
+    "organic_treatment": "Neem oil 3ml per liter water, spray early morning",
+    "cost": "₹40-70 per acre treatment"
+  },
+  "bacterial_blight": {
+    "symptoms": "Water-soaked spots on leaves, yellow halos around spots",
+    "treatment": "Copper hydroxide spray 2g per liter, remove infected plants",
+    "prevention": "Use disease-free seeds, avoid overhead irrigation",
+    "organic_treatment": "Garlic extract: 50g garlic + 1 liter water, boil and spray",
+    "cost": "₹100-200 per acre treatment"
+  },
+  "whitefly_damage": {
+    "symptoms": "Tiny white flying insects, yellowing leaves, sticky honeydew",
+    "treatment": "Yellow sticky traps + neem oil 5ml per liter water",
+    "prevention": "Remove weeds, use reflective mulch",
+    "organic_treatment": "Soap spray: 15ml liquid soap per liter water",
+    "cost": "₹60-120 per acre treatment"
+  }
+}

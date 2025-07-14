@@ -6,7 +6,8 @@ import os
 import tempfile
 
 # from app.services.openai_service import generate_response_with_image
-from app.services.gemini_service import generate_response, generate_response_with_image
+from app.services.gemini_service import generate_kisan_response, generate_response_with_image, validate_response_quality
+from app.services.translation_service import translation_service
 from app.services.speech_service import transcribe_audio
 import re
 
@@ -205,9 +206,14 @@ def process_whatsapp_message(body):
         send_message(data)
         return
 
-    # AI Integration with image support
+    # AI Integration with appropriate response function
     try:
-        response = generate_response_with_image(message_body, wa_id, name, image_path)
+        if image_path:
+            # Use image analysis function for images
+            response = generate_response_with_image(message_body, wa_id, name, image_path)
+        else:
+            # Use Kisan response function for text and audio messages
+            response = generate_kisan_response(message_body, wa_id, name)
         
         # Clean up temporary image file
         if image_path and os.path.exists(image_path):

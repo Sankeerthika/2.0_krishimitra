@@ -7,3 +7,5 @@ aiohttp
 requests
 pillow
 pydub
+deep-translator
+langdetect

@@ -1,0 +1,46 @@
+{
+  "farming_tips": {
+    "organic_farming": {
+      "description": "Sustainable farming without chemical inputs",
+      "benefits": "Better soil health, higher prices, environmental safety",
+      "key_practices": "Composting, crop rotation, natural pest control",
+      "cost_saving": "Reduce input costs by 30-40% over time"
+    },
+    "water_management": {
+      "drip_irrigation": "Save 30-50% water, increase yield by 20-30%",
+      "mulching": "Use crop residue or plastic to retain soil moisture",
+      "rainwater_harvesting": "Collect and store rainwater for dry periods"
+    },
+    "soil_health": {
+      "composting": "Make compost from farm waste and kitchen scraps",
+      "green_manure": "Grow dhaincha, sunhemp before main crop",
+      "crop_rotation": "Rotate cereals with legumes to improve soil fertility"
+    }
+  },
+  "seasonal_calendar": {
+    "kharif_season": {
+      "sowing_time": "June-July with monsoon arrival",
+      "major_crops": "Rice, cotton, sugarcane, maize, soybean",
+      "harvesting": "September-December",
+      "key_activities": "Land preparation, seed treatment, timely sowing"
+    },
+    "rabi_season": {
+      "sowing_time": "October-December",
+      "major_crops": "Wheat, barley, gram, mustard, peas",
+      "harvesting": "March-May",
+      "key_activities": "Irrigation management, pest monitoring"
+    },
+    "zaid_season": {
+      "sowing_time": "March-April",
+      "major_crops": "Fodder crops, vegetables, watermelon",
+      "harvesting": "June-July",
+      "key_activities": "Intensive irrigation, heat protection"
+    }
+  },
+  "emergency_contacts": {
+    "kisan_call_center": "1800-180-1551 (24x7 helpline)",
+    "weather_helpline": "1800-180-8800",
+    "animal_helpline": "1962 (for animal diseases)",
+    "fertilizer_helpline": "1800-111-262"
+  }
+}
