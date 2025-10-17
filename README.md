@@ -1,4 +1,4 @@
-# KisanAI - WhatsApp Agricultural Assistant 🌾🤖
+# Krishimitra - WhatsApp Agricultural Assistant 🌾🤖
 
 A comprehensive Flask-based WhatsApp chatbot specifically designed for farmers and agricultural communities. The bot integrates with Google's Gemini AI to provide intelligent agricultural advice, crop disease identification, market information, and government scheme details. Built with conversation memory and multilingual support to serve farmers effectively.
 
@@ -113,35 +113,6 @@ KisanAI/
    python debug_whatsapp.py
    ```
 
-## WhatsApp Business API Setup 📱
-
-### 1. Create a Meta Developer Account
-- Go to [Meta for Developers](https://developers.facebook.com/)
-- Create a new app for WhatsApp Business
-
-### 2. Configure Webhook
-- Set webhook URL: `https://your-domain.com/webhook`
-- Set verify token (same as in your `.env` file)
-- Subscribe to `messages` webhook field
-
-### 3. Get Required Tokens
-- **Access Token**: From WhatsApp Business API settings
-- **Phone Number ID**: From WhatsApp Business API settings
-- **App Secret**: From App Settings > Basic
-
-## AI Service Configuration 🧠
-
-### Gemini AI for Agriculture (Default)
-The bot uses Google's Gemini AI with specialized agricultural prompts and knowledge base:
-
-1. Get API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Add `GEMINI_API_KEY` to your `.env` file
-3. The system uses specialized prompts for:
-   - Crop disease identification
-   - Agricultural best practices
-   - Market price queries
-   - Government scheme information
-   - Weather-related farming advice
 
 ### Agricultural Knowledge Base
 The bot includes comprehensive data for Indian agriculture:
@@ -241,13 +212,6 @@ This tool will:
 - **Expert Review Integration**: Option for expert validation of critical advice
 - **Continuous Learning**: Improves responses based on farmer feedback
 
-## API Endpoints 🔗
-
-### `GET /webhook`
-Webhook verification endpoint for WhatsApp Business API
-
-### `POST /webhook`
-Receives incoming WhatsApp messages and processes them
 
 ## Development 💻
 
@@ -376,17 +340,11 @@ gunicorn -w 4 -b 0.0.0.0:8000 --timeout 120 run:app
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Support 💬
-
-For questions and support:
-- Create an issue on GitHub
-- Check the [WhatsApp Business API documentation](https://developers.facebook.com/docs/whatsapp)
-- Review [Google Gemini AI documentation](https://ai.google.dev/docs)
 
 ## Acknowledgments 🙏
 
 - Google for the Gemini AI API and agricultural AI capabilities
-- Meta for the WhatsApp Business API
+- Twilio for the WhatsApp Business API
 - Flask community for the excellent framework
 - Indian Council of Agricultural Research (ICAR) for agricultural data
 - State Agricultural Universities for regional knowledge
@@ -440,5 +398,3 @@ KisanAI: "Available solar pump subsidies:
 📞 Helpline: 1800-180-1551"
 ```
 
-##  Demo Video
-Watch our project demonstration: [KisanAI Demo](https://youtu.be/aI2OE6n8ZCI)
