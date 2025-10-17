@@ -9,3 +9,5 @@ pillow
 pydub
 deep-translator
 langdetect
+twilio
+googletrans==4.0.0-rc1
