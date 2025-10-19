@@ -19,36 +19,16 @@ A comprehensive Flask-based WhatsApp chatbot specifically designed for farmers a
 ## Project Structure 📁
 
 ```
-KisanAI/
+Krishimitra/
 ├── app/
-│   ├── __init__.py              # Flask app factory
-│   ├── config.py                # Configuration management
-│   ├── views.py                 # Webhook endpoints
-│   ├── decorators/
-│   │   └── security.py          # Security decorators
-│   ├── services/
-│   │   ├── gemini_service.py    # Gemini AI integration for agricultural queries
-│   │   ├── conversation_service.py # Conversation history management
-│   │   ├── knowledge_base_service.py # Agricultural knowledge database
-│   │   ├── prompt_manager.py    # Specialized agricultural prompts
-│   │   ├── response_validator.py # Quality validation for farming advice
-│   │   ├── translation_service.py # Multilingual support
-│   │   ├── speech_service.py    # Speech-to-text processing
-│   │   └── openai_service.py    # Alternative AI service
-│   └── utils/
-│       └── whatsapp_utils.py    # WhatsApp utilities and message processing
-├── data/
-│   ├── crop_diseases.json       # Crop disease database
-│   ├── government_schemes.json  # Agricultural schemes and subsidies
-│   ├── kisan_knowledge_base.json # Comprehensive farming knowledge
-│   └── market_prices.json       # Market price information
-├── start/                       # Quickstart examples and testing tools
-├── debug_whatsapp.py            # API troubleshooting tool
-├── run.py                       # Application entry point
-├── requirements.txt             # Dependencies
-├── .env.sample                  # Environment template
-├── .gitignore                   # Git ignore rules
-└── README.md                    # This file
+│   ├── __init__.py        # Flask app initialization
+│   ├── routes.py          # Defines all endpoints
+│   └── utils.py           # Helper functions
+├── static/                # CSS, images, JS
+├── templates/             # HTML templates
+├── requirements.txt       # Python dependencies
+└── run.py                 # Entry point
+                  # This file
 ```
 
 ## Setup Instructions 🚀
@@ -65,8 +45,8 @@ KisanAI/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/mandarwagh9/KisanAI.git
-   cd KisanAI/AI
+  git clone https://github.com/Sankeerthika/2.0_krishimitra.git
+
    ```
 
 2. **Install dependencies**
