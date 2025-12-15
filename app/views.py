@@ -205,7 +205,7 @@ def webhook():
                 os.getenv("TWILIO_AUTH_TOKEN")
             )
             client.messages.create(
-                from_=os.getenv("TWILIO_PHONE_NUMBER"),
+                from_=os.getenv("TWILIO_WHATSAPP_NUMBER"),
                 to=from_number,
                 body="⚠️ Sorry! Our Agri assistant faced an issue. Please try again later."
             )
