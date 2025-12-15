@@ -189,7 +189,7 @@ def webhook():
         )
 
         client.messages.create(
-            from_=os.getenv("TWILIO_PHONE_NUMBER"),
+            from_=os.getenv("TWILIO_WHATSAPP_NUMBER"),
             to=from_number,
             body=f"🌾 {reply_text}"
         )
